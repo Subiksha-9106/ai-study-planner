@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Study Planner</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+    input, button { padding: 10px; margin: 5px; }
+    .card { background: white; padding: 15px; margin-top: 10px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>📚 AI Study Planner</h2>
+
+<input id="subject" placeholder="Enter subject">
+<input id="days" type="number" placeholder="Days">
+<button onclick="generate()">Generate Plan</button>
+
+<div id="output"></div>
+
+<script>
+function generate() {
+  let subject = document.getElementById("subject").value;
+  let days = document.getElementById("days").value;
+  let output = "";
+
+  for(let i=1; i<=days; i++){
+    output += `<div class="card">
+      <h3>Day ${i}</h3>
+      <p>Study ${subject} - Topic ${i}</p>
+      <p>Practice questions</p>
+    </div>`;
+  }
+
+  document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
